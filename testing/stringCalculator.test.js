@@ -33,3 +33,12 @@ describe("handle new lines between the numbers - Task 3", () => {
     });
 
 });
+
+describe("support custom single-character delimiter - Task 4", () => {
+
+    test("single-character delimiter is allowed", () => {
+        expect(add("//;\n1;2")).toBe(3);
+        expect(add("//-\n4-5-6")).toBe(15);
+    });
+
+});
