@@ -10,13 +10,12 @@ function add(numbers)
         numbers = numbers.slice(4);
     }
 
-    let parts = numbers.split(delimiter).map(num => {
-        num = Number(num);
-        if(num < 0)
-            throw new Error("“negative numbers not allowed <" + num + ">");
+    let parts = numbers.split(delimiter).map(Number);
+    let negatives = parts.filter(num => num < 0);
 
-        return num;
-    });
+    if(negatives.length > 0)
+        throw new Error("negative numbers not allowed <" + negatives.join(',') + ">");
+
     return parts.reduce((acc, num) => acc + num, 0);
 }
 
