@@ -19,4 +19,9 @@ function add(numbers)
     return parts.reduce((acc, num) => acc + num, 0);
 }
 
-module.exports = { add }
+function GetCalledCount()
+{
+    
+}
+
+module.exports = { add , GetCalledCount}

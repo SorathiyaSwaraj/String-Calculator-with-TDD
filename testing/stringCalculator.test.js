@@ -1,4 +1,4 @@
-const { add } = require("../app/stringCalculator")
+const { add, GetCalledCount } = require("../app/stringCalculator")
 
 describe("Simple test cases - Task 1", () => {
 
@@ -59,6 +59,14 @@ describe("adding multiple negative numbers to input  - Task 6", () => {
 
     test("prints all negative numbers in error ", () => {
         expect(() => add("1,-2,-3")).toThrow("negative numbers not allowed <-2,-3>");
+    });
+
+});
+
+describe("added new method called GetCalledCount()  - Task 7", () => {
+
+    test("new method gives numbers of add method called ", () => {
+        expect(GetCalledCount()).toBe(12);
     });
 
 });
