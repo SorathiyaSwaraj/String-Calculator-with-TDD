@@ -14,6 +14,7 @@ function add(numbers)
     }
 
     let parts = numbers.split(delimiter).map(Number);
+    parts = parts.filter(num => num <= 1000);
     let negatives = parts.filter(num => num < 0);
 
     if(negatives.length > 0)
