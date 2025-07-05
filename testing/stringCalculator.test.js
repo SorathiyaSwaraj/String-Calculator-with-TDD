@@ -15,3 +15,12 @@ describe("Simple test cases - Task 1", () => {
     });
 
 });
+
+describe("any amount of numbers test cases - Task 2", () => {
+
+    test("for any amount of numbers returns total sum", () => {
+        expect(add("1,2,3")).toBe(6);
+        expect(add("10,20,30,40")).toBe(100);
+    });
+
+});
