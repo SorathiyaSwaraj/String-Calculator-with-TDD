@@ -89,3 +89,11 @@ describe("Custom delimiter with any length  - Task 10", () => {
     });
 
 });
+
+describe("allow multiple custom delimiters with single length  - Task 11", () => {
+
+    test('supports multiple custom delimiters', () => {
+        expect(add("//[*][%]\n1*2%3")).toBe(6);
+    });
+
+});
