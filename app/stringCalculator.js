@@ -13,7 +13,7 @@ function add(numbers)
     let parts = numbers.split(delimiter).map(num => {
         num = Number(num);
         if(num < 0)
-            throw new Error("“negative numbers not allowed");
+            throw new Error("“negative numbers not allowed <" + num + ">");
 
         return num;
     });
