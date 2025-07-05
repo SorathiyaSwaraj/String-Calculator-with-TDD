@@ -4,9 +4,7 @@ function add(numbers)
         return 0;
 
     let parts = numbers.split(',').map(Number);
-    let sum = parts.reduce((acc, num) => {return acc + num}, 0);
-
-    return sum;
+    return parts.reduce((acc, num) => acc + num, 0);
 }
 
 module.exports = { add }
