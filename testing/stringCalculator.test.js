@@ -54,3 +54,11 @@ describe("adding negative numbers to input  - Task 5", () => {
     });
 
 });
+
+describe("adding multiple negative numbers to input  - Task 6", () => {
+
+    test("prints all negative numbers in error ", () => {
+        expect(() => add("1,-2,-3")).toThrow("negative numbers not allowed <-2,-3>");
+    });
+
+});
