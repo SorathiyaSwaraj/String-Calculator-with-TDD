@@ -10,4 +10,8 @@ describe("Simple test cases - Task 1", () => {
         expect(add("8")).toBe(8);
     });
 
+    test("for two numbers returns sum", () => {
+        expect(add("5,2")).toBe(7);
+    });
+
 });
