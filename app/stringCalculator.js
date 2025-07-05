@@ -3,11 +3,11 @@ function add(numbers)
     if(numbers === "")
         return 0;
 
-    let parts = numbers.split(',');
+    let parts = numbers.split(',').map(Number);
     if(parts.length == 1)
-        return Number(parts[0]);
+        return parts[0];
     else
-        return Number(parts[0]) + Number(parts[1]);
+        return parts[0] + parts[1];
 }
 
 module.exports = { add }
