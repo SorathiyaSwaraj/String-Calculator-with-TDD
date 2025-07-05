@@ -70,3 +70,13 @@ describe("added new method called GetCalledCount()  - Task 7", () => {
     });
 
 });
+
+describe("number greater than 1000 are not allowed  - Task 7", () => {
+
+    test('numbers greater than 1000 are ignored', () => {
+    expect(add("2,1001")).toBe(2);
+    expect(add("1000,1")).toBe(1001);
+    expect(add("1001,1002")).toBe(0);
+});
+
+});
