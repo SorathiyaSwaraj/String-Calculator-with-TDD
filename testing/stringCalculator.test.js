@@ -97,3 +97,11 @@ describe("allow multiple custom delimiters with single length  - Task 11", () =>
     });
 
 });
+
+describe("allow multiple custom delimiters of any length  - Task 12", () => {
+
+    test('supports multiple custom delimiters pf any length', () => {
+        expect(add("//[--][;;]\n4--5;;6")).toBe(15);
+    });
+
+});
