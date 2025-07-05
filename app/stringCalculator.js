@@ -1,5 +1,8 @@
+let calledCount = 0;
+
 function add(numbers)
 {
+    calledCount++;
     if(numbers === "")
         return 0;
 
@@ -21,7 +24,7 @@ function add(numbers)
 
 function GetCalledCount()
 {
-    
+    return calledCount;
 }
 
 module.exports = { add , GetCalledCount}
