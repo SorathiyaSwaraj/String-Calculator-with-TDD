@@ -9,8 +9,18 @@ function add(numbers)
     let delimiter = /,|\n/;
     if(numbers.startsWith("//"))
     {
-        delimiter = numbers[2];
-        numbers = numbers.slice(4);
+        let match = numbers.match(/^\/\/\[(.+)\]\n/);
+        if(match)
+        {
+            let tempDelimiter = match[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            delimiter = new RegExp(tempDelimiter);
+            numbers = numbers.slice(match[0].length);
+        }
+        else
+        {
+            delimiter = numbers[2];
+            numbers = numbers.slice(4);
+        }
     }
 
     let parts = numbers.split(delimiter).map(Number).filter(num => num <= 1000);
