@@ -24,3 +24,12 @@ describe("any amount of numbers test cases - Task 2", () => {
     });
 
 });
+
+describe("handle new lines between the numbers - Task 3", () => {
+
+    test("new lines in input is allowed", () => {
+        expect(add("1\n2,3")).toBe(6);
+        expect(add("4\n5\n6")).toBe(15);
+    });
+
+});
