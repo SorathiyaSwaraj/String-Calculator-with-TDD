@@ -10,7 +10,14 @@ function add(numbers)
     if(numbers.startsWith("//"))
     {
         let match = numbers.match(/^\/\/\[(.+)\]\n/);
-        if(match)
+        let multiMatch = numbers.match(/^\/\/(\[.\](\[.\])*)\n/);
+        if(multiMatch)
+        {
+            let tempDelimiters = [...multiMatch[1].matchAll(/\[(.)\]/g)].map(d => d[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+            delimiter = new RegExp(tempDelimiters.join('|'));
+            numbers = numbers.slice(multiMatch[0].length);
+        }
+        else if(match)
         {
             let tempDelimiter = match[1].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             delimiter = new RegExp(tempDelimiter);
