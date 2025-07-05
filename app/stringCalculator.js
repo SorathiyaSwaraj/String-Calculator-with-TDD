@@ -3,7 +3,14 @@ function add(numbers)
     if(numbers === "")
         return 0;
 
-    let parts = numbers.split(/,|\n/).map(Number);
+    let delimiter = /,|\n/;
+    if(numbers.startsWith("//"))
+    {
+        delimiter = numbers[2];
+        numbers = numbers.slice(4);
+    }
+
+    let parts = numbers.split(delimiter).map(Number);
     return parts.reduce((acc, num) => acc + num, 0);
 }
 
