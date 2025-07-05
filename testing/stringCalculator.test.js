@@ -49,4 +49,8 @@ describe("adding negative numbers to input  - Task 5", () => {
         expect(() => add("-1,-2")).toThrow("negative numbers not allowed");
     });
 
+    test("prints the negative number in error ", () => {
+        expect(() => add("1,2,-3")).toThrow("negative numbers not allowed <-3>");
+    });
+
 });
