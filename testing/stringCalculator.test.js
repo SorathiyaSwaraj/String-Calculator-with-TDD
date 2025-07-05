@@ -42,3 +42,11 @@ describe("support custom single-character delimiter - Task 4", () => {
     });
 
 });
+
+describe("adding negative numbers to input  - Task 5", () => {
+
+    test("throws an error on negative numbers", () => {
+        expect(() => add("-1,-2")).toThrow("negative numbers not allowed");
+    });
+
+});
