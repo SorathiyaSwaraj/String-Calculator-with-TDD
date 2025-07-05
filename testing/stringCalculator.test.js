@@ -71,12 +71,21 @@ describe("added new method called GetCalledCount()  - Task 7", () => {
 
 });
 
-describe("number greater than 1000 are not allowed  - Task 7", () => {
+describe("number greater than 1000 are not allowed  - Task 9", () => {
 
     test('numbers greater than 1000 are ignored', () => {
-    expect(add("2,1001")).toBe(2);
-    expect(add("1000,1")).toBe(1001);
-    expect(add("1001,1002")).toBe(0);
+        expect(add("2,1001")).toBe(2);
+        expect(add("1000,1")).toBe(1001);
+        expect(add("1001,1002")).toBe(0);
+    });
+
 });
+
+describe("Custom delimiter with any length  - Task 10", () => {
+
+    test('supports custom delimiter of any length', () => {
+        expect(add("//[***]\n1***2***3")).toBe(6);
+        expect(add("//[--]\n4--5--6")).toBe(15);
+    });
 
 });
